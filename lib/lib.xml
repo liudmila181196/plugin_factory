@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>lib</name>
+    </assembly>
+    <members>
+        <member name="T:lib.IPlugin">
+            <summary>
+            The IPlugin interface defines methods for plugins
+            </summary>
+        </member>
+        <member name="P:lib.IPlugin.PluginName">
+            <summary>
+            Return name of plugin
+            </summary>
+        </member>
+        <member name="P:lib.IPlugin.Version">
+            <summary>
+            Return version of plugin
+            </summary>
+        </member>
+        <member name="P:lib.IPlugin.Image">
+            <summary>
+            Return image of plugin
+            </summary>
+        </member>
+        <member name="P:lib.IPlugin.Description">
+            <summary>
+            Return description of plugin
+            </summary>
+        </member>
+        <member name="M:lib.IPlugin.Run(System.Int32,System.Int32)">
+            <summary>
+            Method where defines operation of plugin
+            </summary>
+        </member>
+        <member name="T:lib.PluginFactory">
+            <summary>
+            The PluginFactory interface.
+            </summary>
+        </member>
+        <member name="P:lib.PluginFactory.PluginsCount">
+            <summary>
+            Return count of plugins
+            </summary>
+        </member>
+        <member name="P:lib.PluginFactory.GetPluginNames">
+            <summary>
+            Return array of plugins names
+            </summary>
+        </member>
+        <member name="M:lib.PluginFactory.GetPlugin(System.String)">
+            <summary>
+            Find plugin by name.
+            </summary>
+            <returns>
+            Plugin with given name.
+            </returns>
+        </member>
+        <member name="T:lib.Plugins">
+            <summary>
+            The Plugins class.
+            This class can create new plugins, return plugin by name, list of names and count of plugins.
+            </summary>
+        </member>
+        <member name="F:lib.Plugins.instance">
+            <summary>
+            Store single object of Plugins class (Necessary to realize Singlton pattern)
+            </summary>
+        </member>
+        <member name="F:lib.Plugins.listOfPlugins">
+            <summary>
+            List of all plugins.
+            </summary>
+        </member>
+        <member name="M:lib.Plugins.#ctor">
+            <summary>
+            Default constuctor for Plugins class. (Necessary to realize Singlton pattern)
+            </summary>
+        </member>
+        <member name="P:lib.Plugins.PluginsCount">
+            <summary>
+            Return count of plugins
+            </summary>
+        </member>
+        <member name="P:lib.Plugins.GetPluginNames">
+            <summary>
+            Return array of plugins names
+            </summary>
+        </member>
+        <member name="M:lib.Plugins.getInstance">
+            <summary>
+            Realize Singlton pattern. Allow to initialize only one object of this class. Also there initialized plugins.
+            </summary>
+            <returns>
+            Plugins object
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.GetPlugin(System.String)">
+            <summary>
+            Find plugin by name.
+            </summary>
+            <returns>
+            Plugin with given name.
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.AddPlugin(lib.IPlugin)">
+            <summary>
+            Method to add plugin in plugin list
+            </summary>
+        </member>
+        <member name="T:lib.Plugins.PluginTemp">
+            <summary>
+            Abstract class PluginTemp realise IPlugin interface
+            </summary>
+        </member>
+        <member name="M:lib.Plugins.PluginTemp.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor for children classes with given values
+            </summary>
+        </member>
+        <member name="M:lib.Plugins.PluginTemp.Run(System.Int32,System.Int32)">
+            <summary>
+            Abstract method Run for children classes, which will do something
+            </summary>
+        </member>
+        <member name="T:lib.Plugins.Sum">
+            <summary>
+            Class Sum realise PluginTemp class, which realise the IPlugin interface.
+            Has method Run, which adds two integers.
+            </summary>
+        </member>
+        <member name="M:lib.Plugins.Sum.#ctor">
+            <summary>
+            Default constructor for Sum class.
+            </summary>
+            <returns>
+            The Sum object with default values.
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.Sum.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor for Sum class.
+            </summary>
+            <returns>
+            The Sum object with a given values.
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.Sum.Run(System.Int32,System.Int32)">
+            <summary>
+            Adds two integers and returns the result.
+            </summary>
+            <returns>
+            The sum of two integers and print it in console with information of object.
+            </returns>
+            <param name="input1">An integer precision number.</param>
+            <param name="input2">An integer precision number.</param>
+        </member>
+        <member name="T:lib.Plugins.Multiplication">
+            <summary>
+            Class Multiplication realise PluginTemp class, which realise the IPlugin interface.
+            Has method Run, which multiply two integers.
+            </summary>
+        </member>
+        <member name="M:lib.Plugins.Multiplication.#ctor">
+            <summary>
+            Default constructor for Multiplication class.
+            </summary>
+            <returns>
+            The Multiplication object with default values.
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.Multiplication.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor for Multiplication class.
+            </summary>
+            <returns>
+            The Multiplication object with a given values.
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.Multiplication.Run(System.Int32,System.Int32)">
+            <summary>
+            Multiply two integers and returns the result.
+            </summary>
+            <returns>
+            The multiply of two integers and print it in console with information of object.
+            </returns>
+            <param name="input1">An integer precision number.</param>
+            <param name="input2">An integer precision number.</param>
+        </member>
+        <member name="T:lib.Plugins.Subtraction">
+            <summary>
+            Class Subtraction realise PluginTemp class, which realise the IPlugin interface.
+            Has method Run, which subtract two integers.
+            </summary>
+        </member>
+        <member name="M:lib.Plugins.Subtraction.#ctor">
+            <summary>
+            Default constructor for Subtraction class.
+            </summary>
+            <returns>
+            The Subtraction object with default values.
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.Subtraction.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor for Subtraction class.
+            </summary>
+            <returns>
+            The Subtraction object with a given values.
+            </returns>
+        </member>
+        <member name="M:lib.Plugins.Subtraction.Run(System.Int32,System.Int32)">
+            <summary>
+            Subtract two integers and returns the result.
+            </summary>
+            <returns>
+            The subtract of two integers and print it in console with information of object.
+            </returns>
+            <param name="input1">An integer precision number.</param>
+            <param name="input2">An integer precision number.</param>
+        </member>
+    </members>
+</doc>
